@@ -1,0 +1,9 @@
+baseURL = "/"
+languageCode = "ru"
+title = "Почётные жители района"
+relativeURLs = true
+canonifyURLs = false
+uglyURLs = true
+
+[params]
+  siteTitle = "Почётные жители района"

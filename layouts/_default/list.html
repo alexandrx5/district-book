@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h2>
+<main class="home-list">
+  {{ range .Site.Sections }}
+    <section class="year-block">
+      <h2>{{ .Section }}</h2>
+      <ul>
+        {{ range .Pages }}
+          <li class="person-item">
+            {{ $photo := .Resources.GetMatch "photo*" }}
+            {{ if $photo }}
+              <img src="{{ $photo.RelPermalink }}" alt="{{ .Title }}" class="person-thumb">
+            {{ end }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  {{ end }}
+</main>
+{{ end }}

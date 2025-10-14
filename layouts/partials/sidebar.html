@@ -1,0 +1,22 @@
+<nav class="years-menu">
+  <ul>
+    {{ $sections := .Site.Sections }}
+    {{ range .Site.Sections }}
+      {{ $year := . }}
+      <li class="year-item">
+        {{ $isActiveYear := or (eq $.Section $year.Section) (in $.Permalink $year.RelPermalink) }}
+        <input type="checkbox" id="year-{{ $year.Section }}" hidden {{ if $isActiveYear }}checked{{ end }}>
+        <label for="year-{{ $year.Section }}">{{ $year.Section }}</label>
+        <ul class="submenu">
+          {{ range $year.Pages }}
+            <li>
+              <a href="{{ .RelPermalink }}" {{ if eq .Permalink $.Permalink }}class="active"{{ end }}>
+                {{ .Title }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

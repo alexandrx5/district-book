@@ -1,0 +1,237 @@
+/* body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+}
+.container {
+  display: flex;
+  width: 100%;
+}
+
+img.photo {
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 16px;
+}
+
+html, body {
+  font-family: Arial;
+  height: 100%;
+  width: 100%;
+  min-width: 800px;
+}
+
+body {
+  background: linear-gradient(to right, #dceaff 0%, #ffffff 20%, #ffffff 80%, #dceaff 100%);
+}
+
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: -ms-flexbox; /* IE 10–11 */
+  -ms-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.header-container {
+  min-height: 120px;
+  background: #5BB0FF; /* светло-голубой */
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  /* тень снизу */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+.header {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.inner-container {
+  -ms-flex: 1;
+  flex: 1;
+  display: -ms-flexbox; /* старый синтаксис */
+  -ms-flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 1;
+  position: relative;
+}
+
+
+.sidebar {
+  width: 300px;
+  box-sizing: border-box;
+  padding-top: 45px;
+  -ms-flex: 0 0 300px;
+  flex: 0 0 300px;
+  background: #f0f8ff;
+}
+
+.years-menu ul {
+  list-style: none;
+}
+
+.years-menu label {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-size: 1.5rem;
+  background: #f0f8ff;
+}
+
+.years-menu label::after {
+  content: "▸";
+  position: absolute;
+  right: 15px;
+  transition: transform 0.2s ease;
+}
+
+.years-menu input:checked + label::after {
+  transform: rotate(90deg);
+}
+
+.years-menu .submenu {
+  display: none;
+  margin: 0;
+  border-left: 1px solid #ccc;
+}
+
+.years-menu input:checked + label + .submenu {
+  display: block;
+}
+
+.years-menu .submenu li {
+  background: #f8f9fa;
+  padding: 5px 10px;
+}
+
+.years-menu .submenu li a {
+  display: block;
+  padding: 3px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.years-menu .submenu li a:hover {
+  text-decoration: underline;
+}
+
+.years-menu a.active {
+  font-weight: bold;
+  color: #0055aa;
+  text-decoration: underline;
+}
+
+.years-menu input:checked + label {
+  background: #d0e8ff;
+  font-weight: bold;
+}
+
+
+.content {
+  -ms-flex: 1;
+  flex: 1;
+  background: white;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* если контента много */
+}
+
+.content h1 {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.content .photo {
+  display: block;
+  margin: 0 auto;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  background-color: #ffffff;
+}
+
+.bio {
+  border: 2px solid #cce0ff;
+  padding: 20px 20px 0 20px;
+  border-radius: 8px;
+  background-color: #f9fbfd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  line-height: 1.5;
+}
+
+.bio p {
+  margin-bottom: 20px;
+}
+
+.content .year-block {
+  margin-bottom: 20px;
+}
+
+.content .year-block ul {
+  list-style: none;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.person-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.person-item img.person-thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.person-item a {
+   color: #000;
+  text-decoration: none;
+}
+
+.person-item a:hover {
+  text-decoration: underline;
+}

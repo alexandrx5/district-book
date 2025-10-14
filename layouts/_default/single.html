@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="person">
+  <h1>{{ .Title }}</h1>
+
+  {{ $photo := .Resources.GetMatch .Params.photo }}
+  {{ if $photo }}
+    <img src="{{ $photo.RelPermalink }}" alt="{{ .Title }}" class="photo">
+  {{ end }}
+
+  <div class="bio">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+

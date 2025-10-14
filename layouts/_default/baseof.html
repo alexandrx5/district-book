@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header-container">
+      {{ partial "header.html" . }}
+    </div>
+    <div class="inner-container">
+      <aside class="sidebar">
+        {{ partial "sidebar.html" . }}
+      </aside>
+      <main class="content">
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
+  </div>
+</body>
+</html>
