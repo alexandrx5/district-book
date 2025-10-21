@@ -31,12 +31,11 @@ body {
 
 
 .header-container {
-  min-height: 120px;
-  background: #5BB0FF; /* светло-голубой */
+  min-height: 80px;
+  background: #5BB0FF;
   width: 100%;
   z-index: 2;
   position: relative;
-  /* тень снизу */
   box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
